@@ -12,29 +12,33 @@ namespace ArrayBasic
     /// </summary>
     public class RemoveDuplicatesFromSortedArray
     {
+
         //BruteForce
         // Use Set; put all elements in set (distinct ele), then traverse set and put set's ele back in Arr and update remaining with Default(T)
 
         //optimal -> 2 pointer  
         public static void Run(int[] arr)
         {
+            //Can be done using Linq
+            //arr = arr.Distinct().ToArray();
+            //Console.WriteLine("Final Array: ");
+            ////Array.Resize(ref arr,i+1);
+            //foreach (var item in arr)
+            //    Console.Write($"{item} ");
 
             Console.WriteLine("Input array: ");
             foreach (var item in arr)
                 Console.Write($"{item} ");
             Console.WriteLine();
-            
+
             int i = 0;
             for (int j = i + 1; j < arr.Length; j++)
-            {
                 if (arr[i] != arr[j])
-                {
                     arr[++i] = arr[j];
-                }
-            }
 
+            arr = arr.Distinct().ToArray();
             Console.WriteLine("Final Array: ");
-            Array.Resize(ref arr,i+1);
+            //Array.Resize(ref arr,i+1);
             foreach (var item in arr)
                 Console.Write($"{item} ");
 
