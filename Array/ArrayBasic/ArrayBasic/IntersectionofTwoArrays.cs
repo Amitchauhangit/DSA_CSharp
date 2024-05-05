@@ -26,6 +26,7 @@ namespace ArrayBasic
             int n = arr1.Length, m = arr2.Length;
             Array.Sort(arr1);
             Array.Sort(arr2);
+            int ii = arr1.Sum();
 
             while (i < n && j < m)
             {
